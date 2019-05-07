@@ -36,10 +36,13 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TheDebugAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\TheDebugAdapter\TheDebugAdapter\bin\Debug\TheDebugAdapter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBlackboard.cs" />
-    <Compile Include="Implementations\BlackboardInstance.cs" />
+    <Compile Include="Implementations\BlackboardLocalInstance.cs" />
     <Compile Include="Implementations\BlackboardStaticInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -48,5 +48,10 @@ namespace BRM.Blackboards.Interfaces
         /// Null or empty keys will be ignored
         /// </summary>
         void Unsubscribe<T>(string key, Action<T> onUpdate);
+
+        /// <summary>
+        /// Clears all data in the blackboard
+        /// </summary>
+        void Clear();
     }
 }
