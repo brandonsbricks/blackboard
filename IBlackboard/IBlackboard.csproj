@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FFFA454B-971F-426D-AA83-4964B991F0AC}</ProjectGuid>
+    <ProjectGuid>{55E3AC27-1D03-406E-BF1A-D7EE233E6D33}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blackboards</RootNamespace>
-    <AssemblyName>Blackboards</AssemblyName>
+    <RootNamespace>IBlackboard</RootNamespace>
+    <AssemblyName>IBlackboard</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,25 +36,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TheDebugAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\TheDebugAdapter\TheDebugAdapter\bin\Debug\TheDebugAdapter.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\BlackboardDictionary.cs" />
-    <Compile Include="Wrappers\StaticBlackboardDictionary.cs" />
-    <Compile Include="Wrappers\BlackboardWithNotifications.cs" />
+    <Compile Include="IBlackboard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EventBroker\IBrokerEvents\IBrokerEvents.csproj">
-      <Project>{8ab4a4af-5220-465d-8b8b-6229f20fb80b}</Project>
-      <Name>IBrokerEvents</Name>
-    </ProjectReference>
-    <ProjectReference Include="IBlackboard\IBlackboard.csproj">
-      <Project>{55e3ac27-1d03-406e-bf1a-d7ee233e6d33}</Project>
-      <Name>IBlackboard</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
