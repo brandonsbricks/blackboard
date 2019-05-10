@@ -1,5 +1,5 @@
 using BRM.Blackboards.Interfaces;
-using BRM.TheDebugAdapter.Interfaces.V1;
+using BRM.DebugAdapter.Interfaces;
 
 namespace BRM.Blackboards
 {

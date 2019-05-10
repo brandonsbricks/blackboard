@@ -32,29 +32,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EventBroker.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\EventBroker\Builds\EventBroker.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="IDebug, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\TheDebugAdapter\Builds\IDebug.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TheDebugAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\TheDebugAdapter\TheDebugAdapter\bin\Debug\TheDebugAdapter.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\BlackboardDictionary.cs" />
-    <Compile Include="Wrappers\StaticBlackboardDictionary.cs" />
-    <Compile Include="Wrappers\BlackboardWithNotifications.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Core\BlackboardDictionary.cs" />
+    <Compile Include="Scripts\Wrappers\StaticBlackboardDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EventBroker\IBrokerEvents\IBrokerEvents.csproj">
-      <Project>{8ab4a4af-5220-465d-8b8b-6229f20fb80b}</Project>
-      <Name>IBrokerEvents</Name>
-    </ProjectReference>
-    <ProjectReference Include="IBlackboard\IBlackboard.csproj">
+    <ProjectReference Include="Blackboards.Interfaces\Blackboards.Interfaces.csproj">
       <Project>{55e3ac27-1d03-406e-bf1a-d7ee233e6d33}</Project>
-      <Name>IBlackboard</Name>
+      <Name>Blackboards.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

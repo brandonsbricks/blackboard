@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackboards", "Blackboards.csproj", "{FFFA454B-971F-426D-AA83-4964B991F0AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBlackboard", "IBlackboard\IBlackboard.csproj", "{55E3AC27-1D03-406E-BF1A-D7EE233E6D33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackboards.Interfaces", "Blackboards.Interfaces\Blackboards.Interfaces.csproj", "{55E3AC27-1D03-406E-BF1A-D7EE233E6D33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBrokerEvents", "..\EventBroker\IBrokerEvents\IBrokerEvents.csproj", "{8AB4A4AF-5220-465D-8B8B-6229F20FB80B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackboards.Brokered", "Blackboards.Brokered\Blackboards.Brokered.csproj", "{97771534-292F-45F5-8C69-1DC2F2C5BEBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,9 +16,9 @@ Global
 		{FFFA454B-971F-426D-AA83-4964B991F0AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFFA454B-971F-426D-AA83-4964B991F0AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFFA454B-971F-426D-AA83-4964B991F0AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8AB4A4AF-5220-465D-8B8B-6229F20FB80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8AB4A4AF-5220-465D-8B8B-6229F20FB80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8AB4A4AF-5220-465D-8B8B-6229F20FB80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8AB4A4AF-5220-465D-8B8B-6229F20FB80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97771534-292F-45F5-8C69-1DC2F2C5BEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97771534-292F-45F5-8C69-1DC2F2C5BEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97771534-292F-45F5-8C69-1DC2F2C5BEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97771534-292F-45F5-8C69-1DC2F2C5BEBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
