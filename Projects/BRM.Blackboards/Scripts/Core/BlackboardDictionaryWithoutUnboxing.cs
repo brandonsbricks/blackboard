@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using BRM.Blackboards.Interfaces;
-using BRM.Blackboards.Utilties;
+using BRM.Blackboards.Utilities;
 using BRM.DebugAdapter.Interfaces;
 
 namespace BRM.Blackboards
@@ -9,7 +9,7 @@ namespace BRM.Blackboards
     /// String, object dictionary for decoupled storage + reference across classes
     /// Boxing will occur on first post for value types, but unboxing will not occur
     /// </summary>
-    public class BlackboardDictionaryWithoutUnboxing : IBlackboard
+    public sealed class BlackboardDictionaryWithoutUnboxing : IBlackboard
     {
         internal readonly Dictionary<string, object> _valueStorage = new Dictionary<string, object>();
         private readonly IDebug _debugger;

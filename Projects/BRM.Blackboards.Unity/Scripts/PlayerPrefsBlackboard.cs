@@ -8,7 +8,7 @@ namespace BRM.Blackboards.Unity
     /// <summary>
     /// Saves changes to PlayerPrefs immediately
     /// </summary>
-    public class PlayerPrefsBlackboard : IBlackboard
+    public sealed class PlayerPrefsBlackboard : IBlackboard
     {
         private readonly ISerializeText _serializer;
         private readonly HashSet<string> _keys = new HashSet<string>();

@@ -9,7 +9,7 @@
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>BRM.Blackboards.Brokered</RootNamespace>
         <AssemblyName>BRM.Blackboards.Brokered</AssemblyName>
-        <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,8 +32,8 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="EventBroker.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\EventBroker\Builds\EventBroker.Interfaces.dll</HintPath>
+        <Reference Include="BRM.EventBroker.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\EventBroker\Builds\BRM.EventBroker.Interfaces.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -51,6 +51,15 @@
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+    <ItemGroup>
+        <_dll Include="$(TargetDir)\$(ProjectName).dll" />
+        <_pdb Include="$(TargetDir)\$(ProjectName).pdb" />
+    </ItemGroup>
+    <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release' ">
+        <Copy SourceFiles="@(_dll)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false" />
+        <Copy SourceFiles="@(_pdb)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false" />
+    </Target>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">

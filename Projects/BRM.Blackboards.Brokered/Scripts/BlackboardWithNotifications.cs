@@ -1,12 +1,12 @@
 using BRM.Blackboards.Interfaces;
-using BRM.EventBroker.Interfaces;
+using BRM.EventBrokers.Interfaces;
 
 namespace BRM.Blackboards
 {
     /// <summary>
     /// Publishes an event when <see cref="Post"/> is called
     /// </summary>
-    public class BlackboardWithNotifications : IBlackboard
+    public sealed class BlackboardWithNotifications : IBlackboard
     {
         private IBlackboard _blackboard;
         private IPublishKeyedEvents _valueUpdatedPublisher;

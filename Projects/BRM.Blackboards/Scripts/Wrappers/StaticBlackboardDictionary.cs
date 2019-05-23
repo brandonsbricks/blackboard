@@ -1,12 +1,11 @@
 using BRM.Blackboards.Interfaces;
-using BRM.DebugAdapter.Interfaces;
 
 namespace BRM.Blackboards
 {
     /// <summary>
     /// Wrapper to a static instance of an <see cref="IBlackboard"/>
     /// </summary>
-    public class StaticBlackboardDictionary : IBlackboard
+    public sealed class StaticBlackboardDictionary : IBlackboard
     {
         private static IBlackboard _blackboard;
 

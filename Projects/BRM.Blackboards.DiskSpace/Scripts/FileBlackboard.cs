@@ -5,7 +5,7 @@ using BRM.TextSerializers.Interfaces;
 
 namespace BRM.Blackboards.Files
 {
-    public class FileBlackboard : IBlackboard
+    public sealed class FileBlackboard : IBlackboard
     {
         private readonly IReadFiles _fileReader;
         private readonly IWriteFiles _fileWriter;

@@ -32,16 +32,16 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="FileSerializers.Interfaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\SerializationServices\Builds\FileSerializers.Interfaces.dll</HintPath>
+        <Reference Include="BRM.FileSerializers.Interfaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\SerializationServices\Builds\BRM.FileSerializers.Interfaces.dll</HintPath>
+        </Reference>
+        <Reference Include="BRM.TextSerializers.Interfaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\SerializationServices\Builds\BRM.TextSerializers.Interfaces.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
-        <Reference Include="TextSerializers.Interfaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\SerializationServices\Builds\TextSerializers.Interfaces.dll</HintPath>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +54,15 @@
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+    <ItemGroup>
+        <_dll Include="$(TargetDir)\$(ProjectName).dll" />
+        <_pdb Include="$(TargetDir)\$(ProjectName).pdb" />
+    </ItemGroup>
+    <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release' ">
+        <Copy SourceFiles="@(_dll)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false"/>
+        <Copy SourceFiles="@(_pdb)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false"/>
+    </Target>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">

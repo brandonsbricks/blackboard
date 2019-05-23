@@ -1,4 +1,4 @@
-namespace BRM.Blackboards.Utilties
+namespace BRM.Blackboards.Utilities
 {
     internal static class DebugMessages
     {
