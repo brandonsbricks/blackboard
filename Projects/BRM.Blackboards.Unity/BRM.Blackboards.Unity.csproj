@@ -9,7 +9,7 @@
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>BRM.Blackboards.Unity</RootNamespace>
         <AssemblyName>BRM.Blackboards.Unity</AssemblyName>
-        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,7 +32,7 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="BRM.TextSerializers.Interfaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+        <Reference Include="BRM.TextSerializers.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\..\SerializationServices\Builds\BRM.TextSerializers.Interfaces.dll</HintPath>
         </Reference>
         <Reference Include="System" />
@@ -58,9 +58,13 @@
         <_dll Include="$(TargetDir)\$(ProjectName).dll" />
         <_pdb Include="$(TargetDir)\$(ProjectName).pdb" />
     </ItemGroup>
+    <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Release' ">
+        <Delete Files="@(_dll)"/>
+        <Delete Files="@(_pdb)"/>
+    </Target>
     <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release' ">
-        <Copy SourceFiles="@(_dll)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false"/>
-        <Copy SourceFiles="@(_pdb)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false"/>
+        <Copy SourceFiles="@(_dll)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false" />
+        <Copy SourceFiles="@(_pdb)" DestinationFolder="$(SolutionDir)\Builds\" ContinueOnError="true" SkipUnchangedFiles="false" />
     </Target>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
