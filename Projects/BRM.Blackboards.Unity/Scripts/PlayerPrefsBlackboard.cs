@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using BRM.Blackboards.Interfaces;
-using BRM.TextSerializers.Interfaces;
+using BRM.DataSerializers.Interfaces;
 using UnityEngine;
 
 namespace BRM.Blackboards.Unity

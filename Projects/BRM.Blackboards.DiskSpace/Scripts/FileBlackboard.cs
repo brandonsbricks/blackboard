@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using BRM.Blackboards.Interfaces;
+using BRM.DataSerializers.Interfaces;
 using BRM.FileSerializers.Interfaces;
-using BRM.TextSerializers.Interfaces;
 
 namespace BRM.Blackboards.Files
 {
